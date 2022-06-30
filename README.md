@@ -55,8 +55,8 @@ user.renew_account()
 user.new_account()
 ```
 
-# Exemple Code for how to use
-هذا مثال للكود
+# Exemple Code for how to use 
+هذا مثال للكود لكن لا تنسى ان ترسل رسالة حقيقية لهذا الايميل من اميل اخر 
 ```
 import germail
 from time import sleep
