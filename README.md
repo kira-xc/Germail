@@ -1,14 +1,15 @@
 # Germail
+
 صانع اميلات مؤقتة تستخدم خدمة من موقع mail.tm و تم عمل لها برنمج بسيط من خلال بايثون 
 طريقة التثبيت هي 
-## install germail
 
+## Install germail
+امر التثبيت هو
 ```
 pip3 install germail
 ```
-
-لما تنتهي من التثبيت يمكنك استدعاء المكتبة بكتابة كود 
-## import germail 
+## Import Germail
+لما تنتهي من التثبيت يمكنك استدعاء المكتبة بكتابة كود  
 ```
 import germail
 ```
@@ -29,7 +30,7 @@ messages=user.get_messages()
 last=user.get_last_message()
 ```
 
-## Show message by id of message
+## Show message by ID of message
 اظهار الرسالة عن طريق id تبعها (ملاحظة يمكنك العثور على id من خلال اظهار جميع الرسائل ستظهر معها id ) 
 ```
 msg=user.read_message("515454465414494ds444554")
@@ -40,7 +41,7 @@ msg=user.read_message("515454465414494ds444554")
 ```
 user.login("email@exmple.com","pasword")
 ```
-## Delete mail or renew email create other new mail 
+## Delete mail or Renew email or Create other new Mail 
 يمكنك حذف الاميل او تجديد الاميل او صنع اميل جديد من خلال هذي الاكواد التالية 
 ```
 user.delete_account()
