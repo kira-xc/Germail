@@ -55,4 +55,38 @@ user.renew_account()
 user.new_account()
 ```
 
+# exemple code 
+هذا مثال للكود
+```
+import germail
+from time import sleep
+user=germail.Germail()
 
+
+input("wait message press enter")
+sleep(5)
+try:
+    #get last message Message Class just for casting you can ignore the cast if you want
+    message= user.get_last_message()
+    print("text of message : ", message.text)
+    print("id of message : ",message.id_)
+
+except:
+    print("\n\nnot have a message")
+
+#get info email and pass
+email=user.get_mail()
+password=user.get_password()
+user=None
+
+# parametre create=False = "not create new mail"
+user2=germail.Germail(create=False)
+user2.login(email,password)
+print("\n\n\n#######################################################\n",
+            "Print all message",
+            "\n################################################\n\n\n")
+print(user2.get_messages())
+
+user2.renew_account()
+user2.delete_account()
+```
