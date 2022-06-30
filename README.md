@@ -12,28 +12,46 @@ pip3 install germail
 ```
 import germail
 ```
-### create mail
+## Create mail
 سيظهر لك الاميل و كلمة السر بعد كتابة الكود هذا : 
 
 ```
 user=germail.Germail()
 ```
-### show messages 
+## Show messages 
 ستظهر لك جميع الرسائل بستخدام الكود التالي : 
 ```
 messages=user.get_messages()
 ```
-### show last message
+## Show last message
 اظهار فقط اخر رسالة 
 ```
 last=user.get_last_message()
 ```
 
-### show message by id of message
+## Show message by id of message
 اظهار الرسالة عن طريق id تبعها (ملاحظة يمكنك العثور على id من خلال اظهار جميع الرسائل ستظهر معها id ) 
 ```
 msg=user.read_message("515454465414494ds444554")
 ```
 
+## Login into other mail
+يمكنك تسجيل الدخول الى اميل اخر تم صنعه من قبل من خلال الكود :
+```
+user.login("email@exmple.com","pasword")
+```
+## Delete mail or renew email create other new mail 
+يمكنك حذف الاميل او تجديد الاميل او صنع اميل جديد من خلال هذي الاكواد التالية 
+```
+user.delete_account()
+```
+### or 
+```
+user.renew_account()
+```
+### or
+```
+user.new_account()
+```
 
 
