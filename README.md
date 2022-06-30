@@ -55,7 +55,7 @@ user.renew_account()
 user.new_account()
 ```
 
-# exemple code 
+# Exemple Code for how to use
 هذا مثال للكود
 ```
 import germail
