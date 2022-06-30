@@ -1,0 +1,1 @@
+from germail.geras_mail import Germail, CouldNotGetAccountException, Message,NoMessageFound
