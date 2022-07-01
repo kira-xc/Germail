@@ -1,12 +1,14 @@
 # Germail
 
-صانع اميلات مؤقتة تستخدم خدمة من موقع mail.tm و تم عمل لها برنمج بسيط من خلال بايثون 
+صانع اميلات مؤقتة تستخدم خدمة من موقع 
+mail.tm 
+و تم عمل لها برنمج بسيط من خلال بايثون 
 طريقة التثبيت هي 
 
 ## Install germail
 امر التثبيت هو
 ```
-pip3 install germail
+pip3 install germail -U
 ```
 ## Import Germail
 لما تنتهي من التثبيت يمكنك استدعاء المكتبة بكتابة كود  
@@ -31,7 +33,12 @@ last=user.get_last_message()
 ```
 
 ## Show message by ID of message
-اظهار الرسالة عن طريق id تبعها (ملاحظة يمكنك العثور على id من خلال اظهار جميع الرسائل ستظهر معها id ) 
+اظهار الرسالة عن طريق 
+id 
+الخاص فيها (ملاحظة يمكنك العثور على 
+id 
+من خلال اظهار جميع الرسائل ستظهر معها 
+id ) 
 ```
 msg=user.read_message("515454465414494ds444554")
 ```
@@ -66,10 +73,11 @@ user=germail.Germail()
 input("wait message press enter")
 sleep(5)
 try:
-    #get last message Message Class just for casting you can ignore the cast if you want
+    #get last message
     message= user.get_last_message()
     print("text of message : ", message.text)
     print("id of message : ",message.id_)
+    print("html of message : ",message.html)
 
 except:
     print("\n\nnot have a message")

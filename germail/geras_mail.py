@@ -6,6 +6,7 @@ from dataclasses import dataclass
 from random_username.generate import generate_username
 import random
 import string
+from time import sleep
 
 
 
@@ -53,6 +54,7 @@ class Germail:
         """
         delete the last account and renew an other account
         """
+
         if self.stat_login==True:
             self.delete_account()
             self.__init__(create=True)
@@ -65,6 +67,7 @@ class Germail:
         """
         create new account
         """
+
         self.__init__(create=True,password=self.user_password)
         return True
         
@@ -157,7 +160,7 @@ class Germail:
                     message_data["subject"],
                     #message_data["intro"],
                     text,
-                    #html,
+                    html,
                     #message_data
                      ))
             self.messages=messages
@@ -200,7 +203,7 @@ class Germail:
             r = requests.get(
                 f"{self.api_address}/messages/{id}", headers=self.auth_headers)
             text = r.json()["text"]
-            #html = r.json()["html"]
+            html = r.json()["html"]
             message_data=r.json()
             message=Message(
                     message_data["id"],
@@ -209,14 +212,14 @@ class Germail:
                     message_data["subject"],
                     #message_data["intro"],
                     text,
-                    #html,
+                    html,
                     #message_data
                     )
             return message
         else:
             NoMessageFound()
             print("cant read message without login")
-            return Message(None,None,None,None)
+            return Message(None,None,None,None,None)
             
     def get_last_message(self,r=True):
         """
@@ -237,7 +240,25 @@ class Germail:
         else:
             print("cant read message without login")
             NoMessageFound()
-            return Message(None,None,None,None)
+            return Message(None,None,None,None,None)
+
+    def monitor_account(self):
+        """Keep waiting for new messages ."""
+        
+        if self.stat_login==True:
+            k=False
+            while k==False:
+                print("\nWaiting for new messages...")
+                start = len(self.get_messages())
+                while len(self.get_messages()) == start:
+                    sleep(1)
+                print("New message arrived!")
+                k=True
+            return True
+        else:
+            print("cant waitting a message without login !!",
+            "\ntry login in account for do that\n")
+            return False
 
     def _make_account_request(self,endpoint, address, password):
         account = {"address": address, "password": password}
@@ -263,7 +284,7 @@ class Message:
     subject: str
     #intro: str
     text: str
-    #html: str
+    html: str
     #data: Dict
 
 
