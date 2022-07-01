@@ -1,25 +1,28 @@
 # -*- coding: utf-8 -*-
 from setuptools import setup,find_packages
 
+
 packages = ['germail']
 
 package_data = {'': ['*']}
 
 install_requires = ['random-username>=1.0.2,<2.0.0', 'requests']
 
-with open("README.md", "r") as stream:
+with open("README.md", "r",encoding="utf-8") as stream:
     long_description = stream.read()
 
 setup(
     name='germail',
     license='MIT',
-    version='1.0.0',
+    version='1.0.1',
     description='A python api create temporary mail',
+     long_description_content_type="text/markdown",
     author='kira_xc',
     url='https://github.com/kira-xc/Germail',
     packages=find_packages(),
     package_data=package_data,
     install_requires=install_requires,
+    long_description=long_description,
     keywords=[
         'geras',
         'geras email',
