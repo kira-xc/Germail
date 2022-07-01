@@ -14,10 +14,11 @@ with open("README.md", "r",encoding="utf-8") as stream:
 setup(
     name='germail',
     license='MIT',
-    version='1.0.1',
+    version='1.0.2',
     description='A python api create temporary mail',
-     long_description_content_type="text/markdown",
+    long_description_content_type="text/markdown",
     author='kira_xc',
+    author_email='nomail@exemple.com',
     url='https://github.com/kira-xc/Germail',
     packages=find_packages(),
     package_data=package_data,
