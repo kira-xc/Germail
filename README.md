@@ -7,28 +7,28 @@ mail.tm
 
 ## Install germail
 امر التثبيت هو
-```
+```sh
 pip3 install germail -U
 ```
 ## Import Germail
 لما تنتهي من التثبيت يمكنك استدعاء المكتبة بكتابة كود  
-```
+```py
 import germail
 ```
 ## Create mail
 سيظهر لك الاميل و كلمة السر بعد كتابة الكود هذا : 
 
-```
+```py
 user=germail.Germail()
 ```
 ## Show messages 
 ستظهر لك جميع الرسائل بستخدام الكود التالي : 
-```
+```py
 messages=user.get_messages()
 ```
 ## Show last message
 اظهار فقط اخر رسالة 
-```
+```py
 last=user.get_last_message()
 ```
 
@@ -39,26 +39,26 @@ id
 id 
 من خلال اظهار جميع الرسائل ستظهر معها 
 id ) 
-```
+```py
 msg=user.read_message("515454465414494ds444554")
 ```
 
 ## Login into other mail
 يمكنك تسجيل الدخول الى اميل اخر تم صنعه من قبل من خلال الكود :
-```
+```py
 user.login("email@exmple.com","pasword")
 ```
 ## Delete mail or Renew email or Create other new Mail 
 يمكنك حذف الاميل او تجديد الاميل او صنع اميل جديد من خلال هذي الاكواد التالية 
-```
+```py
 user.delete_account()
 ```
 ### or 
-```
+```py
 user.renew_account()
 ```
 ### or
-```
+```py
 user.new_account()
 ```
 
